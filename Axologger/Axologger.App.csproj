@@ -94,5 +94,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Axologger.Lib\Axologger.Lib.csproj">
+      <Project>{4a43b269-3d63-4056-aa75-3278de4c6bc3}</Project>
+      <Name>Axologger.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
