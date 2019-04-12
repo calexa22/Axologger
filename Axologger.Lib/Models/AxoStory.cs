@@ -19,7 +19,7 @@ namespace Axologger.Lib.Models
         public string Release { get; set; }
         public IEnumerable<AxoTask> RelatedTasks => _taskMap.Values;
 
-        public void RelateTask(List<AxoTask> tasks)
+        public void RelateTasks(List<AxoTask> tasks)
         {
             var taskIds = tasks.Select(t => t.Id).ToList();
             if (taskIds.Count != taskIds.Distinct().ToList().Count)
@@ -59,7 +59,7 @@ namespace Axologger.Lib.Models
                 Release = this.Release
             };
 
-            copy.RelateTask(this._taskMap.Values.Select(task => task.DeepCopy()).ToList());
+            copy.RelateTasks(this._taskMap.Values.Select(task => task.DeepCopy()).ToList());
 
             return copy;
         }
